@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renang</title>
+    <link rel="stylesheet" href="css/cotener.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Anime.css">
+    <link rel="stylesheet" href="css/header.css">
+   <link rel="stylesheet" href="css/navigation.css">
+   <link rel="stylesheet" href="css/feature.css">
+   <link rel="stylesheet" href="css/feature2.css">
+   <link rel="stylesheet" href="css/feature3.css">
+   <link rel="stylesheet" href="css/maincontent1.css">
+   <link rel="stylesheet" href="css/footer.css">
+   <link rel="stylesheet" href="css/styless.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+
+
+.guide-pandu {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  margin: 20px auto;
+  width: 90%;
+  max-width: 900px;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+
+.guide-pandu:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.guide-pandu h2 {
+  margin: 0;
+  padding: 20px;
+  background-color: #7ac6e7; /* var(--accent-color-pandu) */
+  color: #053b59;           /* var(--primary-color-pandu) */
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.guide-pandu:hover h2 {
+  background-color: #053b59;
+  color: #ffffff;
+}
+
+.content-pandu {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  background-color: #f4fbfe;
+  transition: max-height 0.6s ease, padding 0.4s ease;
+}
+
+.guide-pandu.active .content-pandu {
+  max-height: 1000px;
+  padding: 20px;
+}
+
+#pandu-tombol {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #053b59;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+#pandu-tombol:hover {
+  background-color: #7ac6e7;
+}
+
+main {
+  padding-bottom: 100px;
+}
+
+@media (max-width: 768px) {
+
+
+  .guide-pandu {
+    width: 95%;
+    margin: 15px auto;
+    border-radius: 8px;
+  }
+
+  .guide-pandu h2 {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  .content-pandu {
+    padding: 0 15px;
+  }
+
+  .guide-pandu.active .content-pandu {
+    padding: 15px;
+  }
+
+  #pandu-tombol {
+    padding: 12px;
+    font-size: 16px;
+    bottom: 15px;
+    right: 20px;
+  }
+
+  main {
+    padding-bottom: 80px;
+  }
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 14px;
+    text-align: center;
+    margin: 40px auto 0;
+    max-width: 200px; /* PAKSA teks agar cukup 2 kata per baris */
+    line-height: 1.3;
+  }
+    h3 {
+    font-size: 7px;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Tombol ke atas -->
+<button onclick="topFunction()" id="myBtn" title="Go to top">V</button>
+<div id="overlay"></div>
+  <!-- Navigation -->
+  <nav class="nav">
+    <label class="logo" onclick="window.location.href='home.html';">
+      <img src="image/logo.png" alt="Logo" class="logo-img">TIRTA SAPA
+    </label>
+
+    <div class="center-buttons">
+      <div class="dropdown">
+        <a class="dropdown-btn" onclick="toggleDropdown('styleDropdown')">Gaya Renang</a>
+        <div id="styleDropdown" class="dropdown-content">
+          <a href="Gaya Bebas.html">Gaya Bebas</a>
+          <a href="Gaya Dada.html">Gaya Dada</a>
+          <a href="Gaya Punggung.html">Gaya Punggung</a>
+          <a href="Gaya Kupu-kupu.html">Gaya Kupu-Kupu</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a class="dropdown-btn" onclick="toggleDropdown('techniqueDropdown')">Teknik Renang</a>
+        <div id="techniqueDropdown" class="dropdown-content">
+          <a href="Menyelam.html">Menyelam</a>
+          <a href="Menggambang.html">Mengambang</a>
+          <a href="Pembalikkan Salto.html">Salto</a>
+          <a href="Meluncur.html">Meluncur</a>
+          <a href="Melompat.html">Melompat</a>
+        </div>
+      </div>
+
+      <a href="Panduan Keselamatan.html" class="center-btn">Panduan Keselamatan</a>
+      <a href="Peralatan renang.html" class="center-btn">Peralatan Renang</a>
+    </div>
+
+    <a href="about.html">About Us</a>
+    <a href="hubungi pelatih profesional.html">Contact a Professional</a>
+  </nav>
+
+ <br><br><br><br><br>
+  <h1>Panduan Keselamatan</h1>
+  <h3>(Safety Guide) </h3>
+  <br><br><br>
+   <br><br><br><br><br>
+<main>
+  <div class="guide-pandu">
+    <h2 onclick="togglePandu(this)">1. Pemanasan sebelum berenang</h2>
+    <div class="content-pandu">
+      <p>Lakukan peregangan otot ringan selama 5–10 menit sebelum masuk ke kolam. Ini membantu mencegah kram otot dan mempersiapkan tubuh terhadap perubahan suhu air yang drastis. Pemanasan juga meningkatkan sirkulasi darah dan fleksibilitas tubuh. Dengan tubuh yang siap, risiko cedera saat berenang dapat diminimalkan. Selain itu, pemanasan membantu tubuh beradaptasi secara perlahan dengan suhu air yang lebih dingin.</p>
+    </div>
+  </div>
+
+  <div class="guide-pandu">
+    <h2 onclick="togglePandu(this)">2. Gunakan pelampung untuk pemula</h2>
+    <div class="content-pandu">
+      <p>Bagi anak-anak atau orang yang belum mahir berenang, pelampung dada, papan renang, atau ban lengan dapat membantu memberikan rasa aman di air. Pelampung menjaga tubuh tetap mengapung dan memberikan rasa percaya diri. Hal ini penting untuk membangun kebiasaan berenang yang tenang dan fokus. Pengawasan tetap diperlukan meskipun menggunakan pelampung. Gunakan pelampung yang sesuai dengan usia dan berat badan.</p>
+    </div>
+  </div>
+
+  <div class="guide-pandu">
+    <h2 onclick="togglePandu(this)">3. Jangan berenang sendirian</h2>
+    <div class="content-pandu">
+      <p>Berenang sendiri sangat berbahaya. Selalu pastikan ada teman, keluarga, atau petugas pengawas saat berenang. Dalam kondisi darurat, kehadiran orang lain bisa menyelamatkan nyawa. Anak-anak khususnya harus selalu diawasi. Kehadiran orang lain juga membuat aktivitas berenang lebih menyenangkan dan aman.</p>
+    </div>
+  </div>
+
+  <div class="guide-pandu">
+    <h2 onclick="togglePandu(this)">4. Patuhi aturan kolam renang</h2>
+    <div class="content-pandu">
+      <p>Baca dan ikuti semua peringatan atau tanda larangan di area kolam. Aturan tersebut dibuat untuk menjaga keamanan semua pengguna kolam. Melanggar aturan bisa membahayakan diri sendiri dan orang lain. Hormati rambu-rambu seperti larangan menyelam di tempat dangkal. Aturan juga membantu menjaga kebersihan dan kenyamanan lingkungan kolam.</p>
+    </div>
+  </div>
+
+  <div class="guide-pandu">
+    <h2 onclick="togglePandu(this)">5. Hindari bercanda berlebihan di air</h2>
+    <div class="content-pandu">
+      <p>Bercanda seperti saling mendorong, menyelam tiba-tiba, atau menarik orang lain dapat berujung pada kecelakaan yang serius di dalam air. Aktivitas tersebut bisa menyebabkan tenggelam atau cedera. Tetap fokus dan berhati-hati saat bermain air. Jika ingin bermain, pastikan area dan kondisinya aman. Jangan ganggu orang yang sedang berenang dengan serius.</p>
+    </div>
+  </div>
+
+  <div class="guide-pandu">
+    <h2 onclick="togglePandu(this)">6. Jangan berenang saat sakit</h2>
+    <div class="content-pandu">
+      <p>Jika merasa pusing, mual, atau kelelahan, hindari berenang. Kondisi tubuh yang lemah dapat memperbesar risiko tenggelam atau cedera. Selain itu, berenang saat sakit bisa memperparah kondisi kesehatan. Beristirahatlah hingga benar-benar pulih sebelum kembali berenang. Menjaga diri sendiri juga berarti menjaga keselamatan orang di sekitar.</p>
+    </div>
+  </div>
+
+  <div class="guide-pandu">
+    <h2 onclick="togglePandu(this)">7. Jaga kebersihan sebelum dan sesudah berenang</h2>
+    <div class="content-pandu">
+      <p>Mandi sebelum berenang membantu menjaga air kolam tetap bersih. Setelah berenang, bilas tubuh untuk menghilangkan kaporit atau kuman dari air kolam. Kebersihan diri juga melindungi dari infeksi kulit atau mata. Gunakan sabun antibakteri jika perlu. Kebiasaan bersih menunjukkan kepedulian terhadap kesehatan pribadi dan lingkungan kolam.</p>
+    </div>
+  </div>
+
+  <div class="guide-pandu">
+    <h2 onclick="togglePandu(this)">8. Jangan berenang di kolam yang terlalu dalam</h2>
+    <div class="content-pandu">
+      <p>Hindari area kolam yang melebihi kemampuan renangmu. Jika belum mahir, tetaplah di bagian dangkal untuk keamanan. Terjebak di kolam dalam tanpa kemampuan cukup bisa berbahaya. Pelajari batas kedalaman di kolam yang dikunjungi. Gunakan pelampung jika ragu atau takut akan kedalaman.</p>
+    </div>
+  </div>
+
+  <div class="guide-pandu">
+    <h2 onclick="togglePandu(this)">9. Gunakan pakaian renang yang sesuai</h2>
+    <div class="content-pandu">
+      <p>Pakaian renang yang sesuai mempermudah pergerakan di air dan menghindari risiko tersangkut. Hindari memakai pakaian biasa atau terlalu longgar. Baju renang khusus dirancang agar cepat kering dan nyaman di tubuh. Penggunaan pakaian yang tepat juga mendukung teknik berenang yang baik. Pilih bahan yang elastis dan tidak mudah sobek.</p>
+    </div>
+  </div>
+
+  <div class="guide-pandu">
+    <h2 onclick="togglePandu(this)">10. Hindari makan terlalu banyak sebelum berenang</h2>
+    <div class="content-pandu">
+      <p>Tunggu minimal 30 menit setelah makan sebelum berenang agar tubuh tidak kram akibat sistem pencernaan yang sedang bekerja keras. Berenang dalam kondisi perut penuh dapat membuat tidak nyaman. Pilih makanan ringan jika ingin makan sebelum berenang. Hindari makanan berminyak dan berat. Perhatikan waktu makan untuk mendukung performa berenang.</p>
+    </div>
+  </div>
+
+  <div class="guide-pandu">
+    <h2 onclick="togglePandu(this)">11. Periksa kondisi air dan cuaca</h2>
+    <div class="content-pandu">
+      <p>Pastikan kolam bersih, tidak terlalu penuh, dan cuaca mendukung. Hindari berenang saat hujan lebat atau petir untuk menghindari risiko tersambar. Air kolam yang keruh atau bau bisa menjadi tanda kurang bersih. Cuaca ekstrem dapat memicu hipotermia atau kecelakaan. Selalu cek prakiraan cuaca sebelum pergi berenang.</p>
+    </div>
+  </div>
+
+  <div class="guide-pandu">
+    <h2 onclick="togglePandu(this)">12. Ketahui dasar-dasar pertolongan pertama</h2>
+    <div class="content-pandu">
+      <p>Pengetahuan CPR dan teknik menyelamatkan orang tenggelam bisa menyelamatkan nyawa. Pelajari atau ikuti pelatihan pertolongan pertama. Bantuan awal sering kali menjadi penentu keselamatan seseorang. Selain CPR, penting juga mengenali tanda-tanda bahaya dini. Siapkan nomor darurat dan alat P3K di sekitar kolam.</p>
+    </div>
+  </div>
+</main>
+
+
+
+  <!-- Footer -->
+<footer class="footer">
+  	 <div class="contain">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>company</h4>
+				<table width="1200" border="0">
+				<tbody>
+   					 <tr>
+  					    <td><a href="about.html">about us</a></td>
+    					</tr>
+           				<tr>
+      						<td><a href="privacy policy.html">privacy policy</a></td>
+    					</tr>
+      					 </tbody>
+					</table>   
+
+  	 		</div>
+    	 		<div class="footer-col">
+  	 			<h4>follow us</h4>
+  	 			<div class="social-links">
+  	 				<a href="https://www.facebook.com/andreas.anandeto?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="https://instagram.com/savarez_mupu?igshid=YTQwZjQ0NmI0OA=="><i class="fab fa-instagram"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    function togglePandu(header) {
+      const semua = document.querySelectorAll('.guide-pandu');
+      semua.forEach(item => {
+        if (item !== header.parentElement) {
+          item.classList.remove('active');
+        }
+      });
+      header.parentElement.classList.toggle('active');
+    }
+
+    const tombolPandu = document.getElementById("pandu-tombol");
+
+    window.onscroll = function () {
+      if (document.documentElement.scrollTop > 100) {
+        tombolPandu.style.display = "block";
+      } else {
+        tombolPandu.style.display = "none";
+      }
+    };
+
+    function panduTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+  <Script src="js/main1.js"></script>
+    <Script src="js/main3.js"></script>
+  <Script src="js/anim.js"></script>
+  <Script src="js/script.js"></script>
+  <Script src="js/script_with_console_logged.js"></script>
+  <Script src="js/main4.js"></script>
+  <Script src="js/main5.js"></script>
+  <script src="js/anime.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/position.js"></script>
+</body>
+</html>

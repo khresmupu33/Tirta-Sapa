@@ -1,0 +1,224 @@
+html {
+  font-size: 80%;
+}
+
+h3 {
+  font-size: 125%;
+}
+
+p {
+  font-size: 125%;
+}
+
+/* NAVIGATION DEFAULT */
+.nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba(6, 44, 73, 0.7);
+  padding: 0.4rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  transition: all 0.3s ease;
+}
+
+.nav.fixed-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(6, 44, 73, 0.9);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+label.logo {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: Poppins, sans-serif;
+  padding: 0.8rem;
+  margin-right: auto;
+  transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+label.logo:hover {
+  transform: scale(0.9);
+  font-size: 2.99rem;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav a {
+  color: #fff;
+  line-height: 80px;
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 0 1.2rem;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.nav a:hover {
+  color: #00aaff;
+}
+
+/* Tombol dropdown */
+.center-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  position: relative;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.center-buttons .dropdown-btn {
+  display: inline-block;
+  padding: 0.1rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.center-buttons .dropdown-btn:hover {
+  color: #00aaff;
+}
+
+.center-buttons a,
+.center-buttons .dropdown-btn {
+  color: #adc1c9;
+  text-decoration: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  line-height: 80px;
+  transition: color 0.3s;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.center-buttons .dropdown {
+  position: relative;
+}
+
+.center-buttons .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 100%;
+  background-color: #024a75;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 8px;
+  transition: 0.3s;
+  opacity: 0.8;
+}
+
+.center-buttons .dropdown-content a {
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  display: block;
+  transition: 0.3s;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.center-buttons .dropdown-content a:hover {
+  background-color: #008ecc;
+  border-radius: 8px;
+}
+
+/* ✅ Tambahkan Media Query agar Responsive di HP */
+@media (max-width: 1366px) {
+  label.logo {
+    font-size: 2rem;
+    padding: 0.5rem;
+  }
+
+  .logo-img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem;
+  }
+
+  .nav a {
+    font-size: 0.7rem;
+    margin: 0.3rem 0;
+    line-height: normal;
+  }
+
+  .center-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    width: 100%;
+  }
+
+  .center-buttons a,
+  .center-buttons .dropdown-btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    line-height: 1.5;
+  }
+
+  .center-buttons .dropdown-content {
+    position: static;
+    width: 100%;
+    
+  }
+  .center-buttons a,
+.center-buttons .dropdown-btn {
+  transform: scale(1.0);
+  transform-origin: left; /* agar pembesaran tidak merusak layout */
+}
+.center-buttons .dropdown-content a {
+  transform: scale(1.2);
+  transform-origin: left;
+}
+
+}
+
+
+@media (max-width: 1366px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+
+    /* ⬇️ Ini yang bikin backgound cuma nempel kiri */
+    width: fit-content;
+    max-width: 80%; /* biar gak sampai tengah banget */
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+    background: linear-gradient(
+      to right,
+      rgba(13, 87, 143, 0.9) 50%,
+      rgba(6, 44, 73, 0.5) 75%,
+      rgba(8, 55, 91, 0) 100%
+    );
+    backdrop-filter: blur(6px); /* biar ada efek bayangan kaca */
+  }
+}
+
+
+

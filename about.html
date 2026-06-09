@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renang</title>
+    <link rel="stylesheet" href="css/cotener.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Anime.css">
+    <link rel="stylesheet" href="css/header.css">
+   <link rel="stylesheet" href="css/navigation.css">
+   <link rel="stylesheet" href="css/feature.css">
+   <link rel="stylesheet" href="css/feature2.css">
+   <link rel="stylesheet" href="css/feature3.css">
+   <link rel="stylesheet" href="css/maincontent1.css">
+   <link rel="stylesheet" href="css/footer.css">
+   <link rel="stylesheet" href="css/styless.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<style>
+/* General Body and Layout */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #b3e0f2; /* White background for the page */
+  color: #333;
+}
+
+
+/* Section Layout */
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-in-out;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  background-color: #125ba4;
+}
+
+/* Alternate Background Colors */
+.about-section:nth-child(odd) {
+  background-color: #125ba4; /* Light blue background for odd sections */
+}
+
+.about-section:nth-child(even) {
+  background-color: #125ba4; /* White background for even sections */
+}
+
+/* Animation for Fade-In Effect */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* When section is visible */
+.about-section.show {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+/* Text Container */
+.text-container {
+  width: 50%;
+  padding-right: 20px;
+  z-index: 1;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease-in-out;
+  color: #90bcec;
+  background-color: #125ba4; 
+}
+
+.text-container.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.text-container h1 {
+  font-size: 36px;
+  color: #b3e0f2;
+  background-color: #125ba4; 
+}
+
+.text-container p {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+  color:#ffffff;
+}
+
+/* Photo Container */
+.photo-container {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-in-out;
+}
+
+.photo-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.photo {
+  border-radius: 0;
+  box-shadow: none;
+  background-color: transparent;
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-container,
+  .photo-container {
+    width: 100%;
+  }
+
+  .text-container {
+    padding-right: 0;
+  }
+}
+
+/* Section Layout */
+.about-section1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  background-color: #b3e0f2; /* Light blue background */
+}
+
+/* Text Container */
+.text-container1 {
+  width: 50%;
+  padding-right: 20px;
+  animation: fadeInLeft 1s ease-in-out forwards;
+}
+
+.text-container1 h1 {
+  font-size: 36px;
+  color: #125ba4;
+  background-color:#b3e0f2 ; 
+}
+
+.text-container1 p {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Photo Container */
+.photo-container1 {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInRight 1s ease-in-out forwards;
+}
+
+.photo1 {
+  width: 100%;
+  height: 100%;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-section1 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-container1,
+  .photo-container1 {
+    width: 100%;
+    animation: fadeInUp 1s ease-in-out forwards;
+  }
+
+  .text-container1 {
+    padding-right: 0;
+  }
+}
+
+
+.about-section2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+      background-color: #90bcec; /* Light blue background */
+    }
+
+    .text-container2 {
+      width: 50%;
+      padding-right: 20px;
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 1s ease-in-out;
+    }
+
+    .text-container2.show2 {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .text-container2 h1 {
+      font-size: 36px;
+      color: #125ba4;
+      background-color: #90bcec;
+    }
+
+    .text-container2 p {
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: justify;
+      color: #000000;
+    }
+
+    .photo-container2 {
+      width: 45%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transform: translateX(50px);
+      transition: all 1s ease-in-out;
+    }
+
+    .photo-container2.show2 {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .photo2 {
+      width: auto;
+      height: auto;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .about-section2 {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .text-container2,
+      .photo-container2 {
+        width: 100%;
+        padding-right: 0;
+        transform: translateY(50px);
+      }
+
+      .text-container2.show2,
+      .photo-container2.show2 {
+        transform: translateY(0);
+      }
+    }
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-section2 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-container2,
+  .photo-container2 {
+    width: 100%;
+    animation: fadeInUp 1s ease-in-out forwards;
+  }
+
+  .text-container2 {
+    padding-right: 0;
+  }
+}
+
+/* Animation for Mobile View */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 768px) {
+  /* Untuk .about-section (termasuk Khresmupu & Renang) */
+  .about-section {
+    flex-direction: column;
+  }
+
+  .photo-container {
+    order: -1; /* Gambar muncul di atas teks */
+    margin-bottom: 1rem;
+  }
+
+  .text-container {
+    order: 0;
+  }
+
+  /* Untuk .about-section1 (Tirta Sapa) */
+  .about-section1 {
+    flex-direction: column;
+  }
+
+  .photo-container1 {
+    order: -1;
+    margin-bottom: 1rem;
+  }
+
+  .text-container1 {
+    order: 0;
+  }
+
+  /* Untuk .about-section2 (Andreas) */
+  .about-section2 {
+    flex-direction: column;
+  }
+
+  .photo-container2 {
+    order: -1;
+    margin-bottom: 1rem;
+  }
+
+  .text-container2 {
+    order: 0;
+  }
+}
+
+
+</style>
+</head>
+<body>
+<button onclick="topFunction()" id="myBtn" title="Go to top">V</button>
+<!-- Overlay awal -->
+<div id="overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <!-- Logo -->
+    <label class="logo" onclick="window.location.href='home.html';">
+      <img src="image/logo.png" alt="Logo" class="logo-img">TIRTA SAPA
+    </label>
+
+<div class="center-buttons">
+  <!-- Dropdown Swimming Style -->
+  <div class="dropdown">
+    <a  class="dropdown-btn" onclick="toggleDropdown('styleDropdown')">Gaya Renang</a>
+    <div id="styleDropdown" class="dropdown-content">
+      <a href="Gaya Bebas.html">Gaya Bebas</a>
+      <a href="Gaya Dada.html">Gaya Dada</a>
+      <a href="Gaya Punggung.html">Gaya Punggung</a>
+      <a href="Gaya Kupu-kupu.html">Gaya Kupu-Kupu</a>
+    </div>
+  </div>
+
+  <!-- Dropdown Swimming Techniques -->
+  <div class="dropdown">
+    <a  class="dropdown-btn" onclick="toggleDropdown('techniqueDropdown')">Teknik Renang</a>
+    <div id="techniqueDropdown" class="dropdown-content">
+      <a href="Menyelam.html">Menyelam</a>
+      <a href="Menggambang.html">Mengambang</a>
+      <a href="Pembalikkan Salto.html">Salto</a>
+      <a href="Meluncur.html">Meluncur</a>
+      <a href="Melompat.html">Melompat</a>
+    </div>
+  </div>
+
+  <!-- Other Buttons -->
+  <a href="Panduan Keselamatan.html" class="center-btn">Panduan Keselamatan</a>
+  <a href="Peralatan renang.html" class="center-btn">Peralatan Renang</a>
+</div> 
+
+
+  <!-- Navigation Links -->
+  <a href="about.html">About Us</a>
+  <a href="hubungi pelatih profesional.html">Contact a Professional</a>
+ </nav>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll(".about-section");
+  const textContainers = document.querySelectorAll(".text-container");
+  const photoContainers = document.querySelectorAll(".photo-container");
+
+  window.addEventListener("scroll", () => {
+    const triggerPoint = window.innerHeight / 1.3;
+
+    // Animate sections
+    sections.forEach((section) => {
+      const sectionTop = section.getBoundingClientRect().top;
+
+      if (sectionTop < triggerPoint) {
+        section.classList.add("show");
+      } else {
+        section.classList.remove("show");
+      }
+    });
+
+    // Animate text
+    textContainers.forEach((text) => {
+      const textTop = text.getBoundingClientRect().top;
+
+      if (textTop < triggerPoint) {
+        text.classList.add("show");
+      } else {
+        text.classList.remove("show");
+      }
+    });
+
+    // Animate photos
+    photoContainers.forEach((photo) => {
+      const photoTop = photo.getBoundingClientRect().top;
+
+      if (photoTop < triggerPoint) {
+        photo.classList.add("show");
+      } else {
+        photo.classList.remove("show");
+      }
+    });
+  });
+});
+
+
+</script>
+<script>
+window.addEventListener('load', () => {
+  // Menambahkan class 'show' pada Section 2 segera setelah halaman dimuat
+  const firstSection = document.querySelector('.about-section:nth-child(1)');
+  firstSection.classList.add('show');
+  
+  // Menambahkan animasi pada section lain saat scroll
+  const sections = document.querySelectorAll('.about-section');
+  
+  const checkVisibility = () => {
+    const scrollPosition = window.scrollY + window.innerHeight;
+    
+    sections.forEach(section => {
+      if (scrollPosition >= section.offsetTop) {
+        section.classList.add('show');
+      }
+    });
+  };
+
+  // Panggil fungsi scroll untuk menambahkan animasi saat scroll
+  window.addEventListener('scroll', checkVisibility);
+  
+  // Panggil fungsi untuk pengecekan awal saat halaman pertama kali dimuat
+  checkVisibility();
+});
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections2 = document.querySelectorAll(".about-section2");
+    const textContainers2 = document.querySelectorAll(".text-container2");
+    const photoContainers2 = document.querySelectorAll(".photo-container2");
+  
+    window.addEventListener("scroll", () => {
+      const triggerPoint2 = window.innerHeight / 1.3;
+  
+      // Animate sections
+      sections2.forEach((section2) => {
+        const sectionTop2 = section2.getBoundingClientRect().top;
+  
+        if (sectionTop2 < triggerPoint2) {
+          section2.classList.add("show2");
+        } else {
+          section2.classList.remove("show2");
+        }
+      });
+  
+      // Animate text
+      textContainers2.forEach((text2) => {
+        const textTop2 = text2.getBoundingClientRect().top;
+  
+        if (textTop2 < triggerPoint2) {
+          text2.classList.add("show2");
+        } else {
+          text2.classList.remove("show2");
+        }
+      });
+  
+      // Animate photos
+      photoContainers2.forEach((photo2) => {
+        const photoTop2 = photo2.getBoundingClientRect().top;
+  
+        if (photoTop2 < triggerPoint2) {
+          photo2.classList.add("show2");
+        } else {
+          photo2.classList.remove("show2");
+        }
+      });
+    });
+  });
+  </script>
+  
+  <script>
+  window.addEventListener('load', () => {
+    // Menambahkan class 'show2' pada Section 2 segera setelah halaman dimuat
+    const firstSection2 = document.querySelector('.about-section2:nth-child(1)');
+    firstSection2.classList.add('show2');
+    
+    // Menambahkan animasi pada section lain saat scroll
+    const sections2 = document.querySelectorAll('.about-section2');
+    
+    const checkVisibility2 = () => {
+      const scrollPosition2 = window.scrollY + window.innerHeight;
+      
+      sections2.forEach(section2 => {
+        if (scrollPosition2 >= section2.offsetTop) {
+          section2.classList.add('show2');
+        }
+      });
+    };
+  
+    // Panggil fungsi scroll untuk menambahkan animasi saat scroll
+    window.addEventListener('scroll', checkVisibility2);
+    
+    // Panggil fungsi untuk pengecekan awal saat halaman pertama kali dimuat
+    checkVisibility2();
+  });
+  </script>
+  
+<br>
+<br>
+<br>
+<br>
+
+<section class="about-section1">
+	
+    <div class="text-container1">
+      <h1>Tirta Sapa</h1>
+      <p>
+        Website ini mengusung dua kata kunci utama yang sarat makna, yaitu “Tirta” dan “Sapa.” Kata tirta berasal dari bahasa Sanskerta yang berarti air atau air suci. Dalam konteks budaya dan spiritual, tirta sering diasosiasikan dengan unsur penyucian, ketenangan, dan pembaruan diri. Dalam website pembelajaran renang ini, tirta menjadi simbol dari elemen utama olahraga renang itu sendiri—air—yang bukan hanya sebagai media fisik, tetapi juga menjadi sarana pembelajaran yang menenangkan, menyegarkan, dan menyucikan proses belajar bagi pemula. Dengan bantuan animasi 3D, pengguna diajak mengenal dan memahami teknik-teknik dasar renang secara visual dan interaktif, seolah-olah mereka benar-benar menyelami air secara langsung.
+      </p>
+      <p>Sementara itu, sapa berarti salam, ucapan, atau sapaan. Dalam website ini, sapa melambangkan sambutan hangat dan ajakan bersahabat kepada para pengguna—khususnya pemula—untuk memulai perjalanan belajar mereka dengan nyaman dan percaya diri. Konsep sapa diwujudkan melalui tampilan antarmuka yang ramah, karakter animasi yang memberikan panduan interaktif, serta navigasi yang mudah dipahami. Dengan pendekatan yang bersahabat ini, pengguna seakan disapa dan dibimbing secara langsung dalam setiap langkah belajar, mulai dari pengenalan teknik dasar hingga penguasaan gerakan renang yang lebih kompleks.</p>
+      <p>Kombinasi konsep tirta dan sapa menjadi landasan identitas website ini: sebuah ruang digital pembelajaran yang menyegarkan dan menyambut, tempat di mana pemula dapat belajar berenang dengan nyaman, aman, dan penuh semangat. Website ini bukan hanya tempat untuk belajar teknik, tetapi juga menjadi jembatan awal menuju pengalaman berenang yang menyenangkan dan bermakna.</p>
+    </div>
+    <div class="photo-container1" id="photo1">
+      <img src="image/logo.png" alt="Photo1" class="photo1" width="100%" height="auto">
+    </div>
+	</div>
+  </section>
+
+ <div class="about-section">
+<div class="photo-container">
+	<img src="./image/lomba.jpg" alt="Photo1" class="photo1" width="100%" height="auto">
+    
+  </div>
+  <div class="text-container">
+    <h1>Renang</h1>
+    <p>
+      Renang adalah cabang olahraga yang menggunakan anggota tubuh terutama bagian tangan dan kaki untuk bergerak di dalam air. Orang yang berenang menggunakan gerakan tubuhnya untuk bergerak melalui air. Renang juga menjadi salah satu olahraga yang sangat populer di seluruh dunia dan bahkan menjadi bagian dari Olimpiade.
+    </p>
+  </div>
+  
+</div>
+
+
+  
+  <section class="about-section2">
+    <div class="text-container2">
+      <h1>Tentang kami (Andreas)</h1>
+      <p>
+        Dia adalah Andreas, seorang ahli dalam perancangan desain serta pengembangan website. Dengan keahliannya dalam desain antarmuka yang menarik dan pengalaman luas dalam coding, Andreas mampu menciptakan website yang tidak hanya estetis, tetapi juga fungsional dan responsif. Keahliannya mencakup berbagai teknologi pemrograman web, mulai dari HTML, CSS, JavaScript, hingga framework modern yang digunakan dalam pengembangan website interaktif dan dinamis. Dengan dedikasi dan kreativitasnya, Andreas selalu berusaha memberikan hasil terbaik bagi setiap proyek yang dikerjakannya.
+      </p>
+    </div>
+    <div class="photo-container2" id="photo2">
+      <img src="./image/Andreas.png" alt="Photo2" class="photo2">
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section class="about-section">
+	<div class="photo-container" id="photo3">
+      <img src="./image/Khresmupu.png" alt="Photo" class="photo" width="auto" height="auto">
+    </div>
+    <div class="text-container">
+      <h1>Tentang Kami (Khresmupu)</h1>
+      <p> <strong>Khresmupu</strong> singkatan dari <strong>Khresna Mulia Putra</strong> adalah seorang kreator multitalenta yang menggabungkan seni, teknologi, dan olahraga dalam satu visi kreatif. Sebagai animator dan pengembang web, ia merancang animasi interaktif yang tidak hanya memikat secara visual, tetapi juga didukung oleh struktur kode yang dirancang secara mandiri dan profesional. Perpaduan antara estetika dan fungsionalitas dalam karyanya menjadikan pengalaman digital yang imersif dan edukatif, terutama dalam bidang pembelajaran renang. </p> <p> Melalui website ini, Khresmupu mempersembahkan inovasi pembelajaran renang dalam bentuk animasi 3D interaktif. Tujuannya adalah membantu siswa/siswi memahami teknik dasar dan lanjutan renang dengan cara yang menarik dan mudah dipahami. Setiap elemen pada website ini dirancang dengan dedikasi tinggi, mencerminkan komitmen Khresmupu dalam menghadirkan media belajar yang adaptif dan inspiratif. </p> <p> Di luar dunia digital, Khresmupu juga dikenal sebagai perenang berprestasi yang memiliki pemahaman mendalam tentang teknik renang. Pengalamannya di bidang ini menjadi dasar kuat dalam pengembangan materi visual yang akurat dan aplikatif. Selain itu, Khresmupu merupakan seorang musisi yang telah menciptakan sembilan lagu orisinal, mengekspresikan ragam emosi melalui karya seni musik yang harmonis. </p> <p> Kehadiran Khresmupu di dunia kreatif ini bukan sekadar menghadirkan teknologi, melainkan menghidupkan pengalaman belajar yang menyatu antara keahlian teknis, nilai artistik, dan semangat olahraga. </p>
+    </div>
+  </section>
+</main>
+</main>
+<footer class="footer">
+  <div class="contain">
+    <div class="row">
+      <div class="footer-col">
+        <h4>company</h4>
+     <table width="1200" border="0">
+     <tbody>
+           <tr>
+             <td><a href="about.html">about us</a></td>
+           </tr>
+                <tr>
+               <td><a href="privacy policy.html">privacy policy</a></td>
+           </tr>
+              </tbody>
+       </table>   
+
+      </div>
+        <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="https://www.facebook.com/andreas.anandeto?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com/savarez_mupu?igshid=YTQwZjQ0NmI0OA=="><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<Script src="js/main1.js"></script>
+  <Script src="js/main2.js"></script>
+  <Script src="js/anim.js"></script>
+  <Script src="js/script.js"></script>
+  <Script src="js/script_with_console_logged.js"></script>
+  <Script src="js/main4.js"></script>
+  <Script src="js/main5.js"></script>
+  <script src="js/anime.js"></script>
+  <script src="js/navigation.js"></script>
+</body>
+</html>
+

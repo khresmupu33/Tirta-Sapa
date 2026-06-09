@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swimming Website</title>
+  <style>
+
+html, body {
+  overflow-x: hidden; /* Nonaktifkan scroll horizontal */
+}
+
+    /* Reset styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+	   max-width: 100vw; /* Batasi lebar elemen maksimum ke lebar layar */
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #fff;
+      background-color: #062c49;
+      transition: background-color 1s ease, opacity 1s ease; /* Durasi animasi */
+      opacity: 1; /* Awal opacity penuh */
+    }
+    .animating {
+      background-color: #00008b; /* Latar belakang biru tua */
+      opacity: 0; /* Menyembunyikan konten secara perlahan */
+    }
+
+    .btn-primary {
+      padding: 0.7rem 1.5rem;
+      background-color: #00aaff;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    .btn-primary:hover {
+      background-color: #008ecc;
+    }
+
+    /* Overlay awal */
+     #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #00008b;
+      z-index: 9999;
+      animation: fadeOut 2s ease forwards; /* Animasi transisi keluar */
+    }
+
+    /* Keyframes untuk fade-out */
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+    .hide {
+      opacity: 0;
+      transform: translateY(30px); /* Turun sedikit */
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    /* Tampilkan elemen dengan opacity 1 */
+    .show {
+      opacity: 1;
+      transform: translateY(0); /* Posisi normal */
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .features > *.show {
+      opacity: 1;
+      transform: scale(1); /* Kembali ke ukuran normal */
+      transition: opacity 0.6s ease, transform 0.6s ease; /* Waktu tampil tetap lambat */
+    }
+
+    /*top button*/
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 4;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  rotate: 180deg;
+}
+
+#myBtn:hover {
+  background-color: #555;
+  rotate: 180deg;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+button:before {
+  display: inline-block;
+  text-align: left;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 1rem;
+}
+
+.card, .article {
+    border: 1px solid #ccc;
+    padding: 1rem;
+	
+}
+
+.card img, .article img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+ .card .description {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 5px 10px;
+            border-radius: 8px;
+            opacity: 0;
+            transition: opacity 0.3s ease, bottom 0.3s ease;
+            font-size: 14px;
+        }
+
+      
+*{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: border-box;
+	box-sizing: border-box;
+}
+
+
+
+/* 🔥 Animasi muncul */
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+  </style>
+  <link rel="stylesheet" href="css/Anime.css">
+ 	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/navigation.css">
+	<link rel="stylesheet" href="css/feature.css">
+	<link rel="stylesheet" href="css/feature2.css">
+	<link rel="stylesheet" href="css/feature3.css">
+	<link rel="stylesheet" href="css/maincontent1.css">
+	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="css/styless.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">V</button>
+  <!-- Overlay awal -->
+  <div id="overlay"></div>
+
+   <!-- Navigation -->
+  <nav class="nav">
+    <!-- Logo -->
+    <label class="logo" onclick="window.location.href='home.html';">
+      <img src="image/logo.png" alt="Logo" class="logo-img">TIRTA SAPA
+    </label>
+
+<div class="center-buttons">
+  <!-- Dropdown Swimming Style -->
+  <div class="dropdown">
+    <a  class="dropdown-btn" onclick="toggleDropdown('styleDropdown')">Gaya Renang</a>
+    <div id="styleDropdown" class="dropdown-content">
+      <a href="Gaya Bebas.html">Gaya Bebas</a>
+      <a href="Gaya Dada.html">Gaya Dada</a>
+      <a href="Gaya Punggung.html">Gaya Punggung</a>
+      <a href="Gaya Kupu-kupu.html">Gaya Kupu-Kupu</a>
+    </div>
+  </div>
+
+  <!-- Dropdown Swimming Techniques -->
+  <div class="dropdown">
+    <a  class="dropdown-btn" onclick="toggleDropdown('techniqueDropdown')">Teknik Renang</a>
+    <div id="techniqueDropdown" class="dropdown-content">
+      <a href="Menyelam.html">Menyelam</a>
+      <a href="Menggambang.html">Mengambang</a>
+      <a href="Pembalikkan Salto.html">Salto</a>
+      <a href="Meluncur.html">Meluncur</a>
+      <a href="Melompat.html">Melompat</a>
+    </div>
+  </div>
+
+  <!-- Other Buttons -->
+  <a href="Panduan Keselamatan.html" class="center-btn">Panduan Keselamatan</a>
+  <a href="Peralatan renang.html" class="center-btn">Peralatan Renang</a>
+
+</div> 
+
+
+  <!-- Navigation Links -->
+  <a href="about.html">About Us</a>
+  <a href="hubungi pelatih profesional.html">Contact a Professional</a>
+ </nav>
+
+
+  <!-- Header Section -->
+  <header class="header">
+    <h1>Buka Potensi Berenang Anda!</h1>
+    <p>Nikmati pelajaran renang profesional dengan teknologi dan panduan terkini yang dirancang khusus untuk Anda. Baik Anda seorang pemula atau calon atlet, kami siap membantu Anda mencapai tujuan!</p>
+
+  <!-- Main Content 2 -->
+  <section class="main-content-2">
+    <div class="features">
+      <div class="feature-2">
+        <h2>Panduan Keselamatan</h2>
+        <a href="Panduan Keselamatan.html">Detail</a>
+      </div>
+      <div class="feature-2">
+        <h2>Peralatan Renang</h2>
+        <a href="Peralatan renang.html">Detail</a>
+      </div>
+    </div>
+  </section>
+
+  </header>
+
+  <!-- Main Content 1 -->
+  <main class="main-content">
+<h1>JELAJAHI GAYA RENANG</h1>
+    <section class="features">
+      <div class="feature">
+        <img src="image/gaya bebas.jpg" alt="gaya bebas">
+        <h2>Gaya Bebas</h2>
+ 	<p>Gaya renang tercepat dan paling populer, memberikan kebebasan penuh dalam gerakan tubuh. Dengan teknik ini, Anda dapat meningkatkan kecepatan, stamina, dan efisiensi di dalam air. Cocok bagi Anda yang ingin menguasai dasar-dasar renang dengan cara yang dinamis.</p>
+        <a href="Gaya Bebas.html">Pelajari</a>
+      </div>
+      <div class="feature">
+        <img src="image/Gaya Dada.jpeg" alt="gaya dada">
+        <h2>Gaya Dada</h2>
+	 <p>Gaya renang santai yang ideal untuk melatih pernapasan dan ketenangan di air. Cocok untuk pemula yang ingin fokus pada kontrol gerakan dan keseimbangan tubuh. Dengan gaya ini, Anda dapat berenang lebih lama tanpa merasa cepat lelah.
+</p>
+        <a href="Gaya Dada.html">Pelajari</a>
+      </div>
+      <div class="feature">
+        <img src="image/gaya punggung.jpg" alt="gaya punggung">
+        <h2>Gaya Punggung</h2>
+	<p>Teknik yang unik dengan posisi telentang, cocok untuk melatih kekuatan punggung dan koordinasi tubuh. Gaya ini memberikan pengalaman berenang yang nyaman sambil tetap melatih seluruh otot tubuh.
+</p>
+        <a href="Gaya Punggung.html">Pelajari</a>
+      </div>
+      <div class="feature">
+        <img src="image/gaya kupu-kupu.jpg" alt="gaya kupu">
+        <h2>Gaya Kupu</h2>
+	<p>Gaya yang melambangkan kekuatan dan ketangkasan. Cocok untuk perenang tingkat lanjut yang ingin menguasai teknik yang indah sekaligus menantang. Ritme gelombang tubuh dan ayunan tangan memberikan sensasi berenang yang unik.</p>
+        <a href="Gaya Kupu-kupu.html">Pelajari</a>
+      </div>
+    </section>
+  </main>
+
+ <!-- Main Content 4 -->
+  <main class="main-content-4">
+<h1>JELAJAHI TEKNIK DASAR RENANG</h1>
+    <section class="features">
+<div class="feature-video-container">
+  <button class="scroll-btn-feature left" onclick="scrollFeatureCards(-1)">‹</button>
+
+  <div class="features-3" id="featureCardsScroll">
+      <div class="feature-3">
+        <img src="image/UNDERWATER.jpg" alt="menyelam">
+        <h2>Menyelam</h2>
+	<p>Teknik menyelam membuka pintu untuk menjelajahi dunia bawah air. Cocok untuk Anda yang ingin memperluas keterampilan berenang, baik untuk kompetisi maupun eksplorasi rekreasi.
+</p>
+        <a href="Menyelam.html">Pelajari</a>
+      </div>
+      <div class="feature-3">
+        <img src="image/menggambang.jpeg" alt="mengambang">
+        <h2>Mengambang</h2>
+	<p>Teknik penting untuk mengatasi rasa takut air. Dengan menguasai teknik ini, Anda akan merasa nyaman dan aman di dalam air, bahkan saat berhenti bergerak.</p>
+        <a href="Menggambang.html">Pelajari</a>
+      </div>
+      <div class="feature-3">
+        <img src="image/Pembalikkan.jpg" alt="salto">
+        <h2>Salto</h2>
+	<p>Teknik berputar yang sering digunakan untuk membalik arah di ujung kolam. Memungkinkan Anda untuk bergerak lebih cepat dan efisien saat berenang. Sangat penting untuk kompetisi dan latihan intensif.</p>
+        <a href="Pembalikkan Salto.html">Pelajari</a>
+      </div>
+      <div class="feature-3">
+        <img src="image/meluncur.png" alt="meluncur">
+        <h2>Meluncur</h2>
+	<p>Dasar penting yang membantu Anda memahami aerodinamika tubuh di dalam air. Teknik ini mengajarkan cara mengurangi hambatan air dan memaksimalkan kecepatan sebelum memulai gerakan berenang.</p>
+        <a href="Meluncur.html">Pelajari</a>
+      </div>
+    <div class="feature-3">
+      <img src="image/melompat.jpg" alt="melompat">
+      <h2>Melompat</h2>
+      <p>Teknik awal yang penting untuk memasuki air dengan posisi dan momentum yang tepat. Melompat membantu menciptakan awalan yang kuat dan stabil sebelum mulai berenang.</p>
+      <a href="Melompat.html">Pelajari</a>
+    </div>
+<button class="scroll-btn-feature right" onclick="scrollFeatureCards(1)">›</button>
+    </div>
+    </section>
+  </main>
+
+ <!-- Main Content 3 -->
+<section class="main-content-3"  id="video-renang">
+  <h1>Video Pembelajaran Renang</h1>
+  <div class="video-container">
+   <button class="scroll-btn-video left" onclick="scrollVideoSlider(-1)">‹</button>
+    
+    <div class="video-slider" id="videoSlider">
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/MRgc0VKfRdo" frameborder="0" allowfullscreen></iframe>
+        <h3>Gaya Bebas</h3>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/89HxafulzyI" frameborder="0" allowfullscreen></iframe>
+        <h3>Gaya Punggung</h3>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/mTMndHv_7Lc" frameborder="0" allowfullscreen></iframe>
+        <h3>Gaya Dada</h3>
+      </div>
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/UffZn_-lU54" frameborder="0" allowfullscreen></iframe>
+        <h3>Gaya Kupu-kupu</h3>
+      </div>
+<!-- GAYA BEBAS -->
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/KK563K_DZP0" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+  <h3>Kaki Gaya Bebas</h3>
+</div>
+
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/5HLW2AI1Ink" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+  <h3>Tangan Gaya Bebas</h3>
+</div>
+
+<!-- GAYA DADA -->
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/BJj9z4n0STk" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+  <h3>Kaki Gaya Dada</h3>
+</div>
+
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/QGZ8rIy-YtI" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+  <h3>Tangan Gaya Dada</h3>
+</div>
+
+<!-- GAYA PUNGGUNG -->
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/TvCvdIQLbaA" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+  <h3>Kaki Gaya Punggung</h3>
+</div>
+
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/JghqyliWwb4" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+  <h3>Tangan Gaya Punggung</h3>
+</div>
+
+<!-- GAYA KUPU-KUPU -->
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/ebMfr7n65_c" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+  <h3>Kaki Gaya Kupu-Kupu</h3>
+</div>
+
+<div class="video-card">
+  <iframe src="https://www.youtube.com/embed/aCnch-7MEPs" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+  <h3>Tangan Gaya Kupu-Kupu</h3>
+</div>
+
+    </div>
+    
+<button class="scroll-btn-video right" onclick="scrollVideoSlider(1)">›</button>
+  </div>
+  <p>Disclaimer</p>
+<p>Video-video diatas adalah hak milik dari SPEEDO dan YOUTUBE yang kami gunakan sebagai referensi untuk gerakan yang dilakukan oleh atlet profesional.</p>
+</section>
+
+
+
+  <footer class="footer">
+    <div class="contain">
+      <div class="row">
+        <div class="footer-col">
+          <h4>company</h4>
+       <table width="1200" border="0">
+       <tbody>
+             <tr>
+               <td><a href="about.html">about us</a></td>
+             </tr>
+                  <tr>
+                 <td><a href="privacy policy.html">privacy policy</a></td>
+             </tr>
+                </tbody>
+         </table>   
+
+        </div>
+          <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/andreas.anandeto?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/savarez_mupu?igshid=YTQwZjQ0NmI0OA=="><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+ </footer>
+
+  <Script src="js/main1.js"></script>
+    <Script src="js/main2.js"></script>
+    <Script src="js/anim.js"></script>
+    <Script src="js/script.js"></script>
+    <Script src="js/script_with_console_logged.js"></script>
+    <Script src="js/main4.js"></script>
+    <Script src="js/main5.js"></script>
+    <script src="js/anime.js"></script>
+    <script src="js/navigation.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let sections = document.querySelectorAll(".main-content, .main-content-4");
+
+    function revealOnScroll() {
+      sections.forEach((section) => {
+        let rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          section.classList.add("show");
+        }
+      });
+    }
+
+    sections.forEach((section) => {
+      section.classList.add("hidden"); // Sembunyikan di awal
+    });
+
+    revealOnScroll(); // Cek saat halaman dimuat
+    window.addEventListener("scroll", revealOnScroll); // Cek saat scroll
+  });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const features = document.querySelectorAll(".feature, .feature-3");
+
+  if (window.innerWidth <= 919) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          entry.target.classList.remove("hidden");
+        } else {
+          entry.target.classList.add("hidden");
+          entry.target.classList.remove("show");
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    features.forEach((feature) => {
+      feature.classList.add("hidden"); // Set initial state to hidden
+      observer.observe(feature);
+    });
+  } else {
+    features.forEach((feature) => {
+      feature.classList.remove("hidden");
+      feature.classList.add("show");
+    });
+  }
+});
+</script>
+
+</body>
+</html>

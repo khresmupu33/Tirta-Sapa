@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renang</title>
+    <link rel="stylesheet" href="css/cotener2.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Anime.css">
+   <link rel="stylesheet" href="css/navigation.css">
+   <link rel="stylesheet" href="css/footer.css">
+   <link rel="stylesheet" href="css/styless.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+<button onclick="topFunction()" id="myBtn" title="Go to top">V</button>
+<!-- Overlay awal -->
+<div id="overlay"></div>
+  <!-- Navigation -->
+  <nav class="nav">
+    <!-- Logo -->
+    <label class="logo" onclick="window.location.href='home.html';">
+      <img src="image/logo.png" alt="Logo" class="logo-img">TIRTA SAPA
+    </label>
+
+<div class="center-buttons">
+  <!-- Dropdown Swimming Style -->
+  <div class="dropdown">
+    <a  class="dropdown-btn" onclick="toggleDropdown('styleDropdown')">Gaya Renang</a>
+    <div id="styleDropdown" class="dropdown-content">
+      <a href="Gaya Bebas.html">Gaya Bebas</a>
+      <a href="Gaya Dada.html">Gaya Dada</a>
+      <a href="Gaya Punggung.html">Gaya Punggung</a>
+      <a href="Gaya Kupu-kupu.html">Gaya Kupu-Kupu</a>
+    </div>
+  </div>
+
+  <!-- Dropdown Swimming Techniques -->
+  <div class="dropdown">
+    <a  class="dropdown-btn" onclick="toggleDropdown('techniqueDropdown')">Teknik Renang</a>
+    <div id="techniqueDropdown" class="dropdown-content">
+      <a href="Menyelam.html">Menyelam</a>
+      <a href="Menggambang.html">Mengambang</a>
+      <a href="Pembalikkan Salto.html">Salto</a>
+      <a href="Meluncur.html">Meluncur</a>
+      <a href="Melompat.html">Melompat</a>
+    </div>
+  </div>
+
+  <!-- Other Buttons -->
+  <a href="Panduan Keselamatan.html" class="center-btn">Panduan Keselamatan</a>
+  <a href="Peralatan renang.html" class="center-btn">Peralatan Renang</a>
+</div> 
+
+
+  <!-- Navigation Links -->
+  <a href="about.html">About Us</a>
+  <a href="hubungi pelatih profesional.html">Contact a Professional</a>
+ </nav>
+<br><br><br><br><br>
+<h1>Meluncur</h1>
+<h3>(Gliding)</h3>
+<div class="slide-container" id="vSlide1">
+    <div class="slide" id="vSlide1-hSlide1">
+      <video src="video/meluncur samping1.mp4" autoplay loop muted disablePictureInPicture></video>
+    </div>
+    <div class="slide active" id="vSlide1-hSlide2"> <!-- Meluncur depan menjadi tampilan awal -->
+      <video src="video/meluncur depan.mp4" autoplay loop muted disablePictureInPicture></video>
+    </div>
+    <div class="slide" id="vSlide1-hSlide3">
+      <video src="video/meluncur samping2.mp4" autoplay loop muted disablePictureInPicture></video>
+    </div>
+  </div>
+
+  <div class="slide-container" id="vSlide3">
+    <div class="slide active" id="vSlide3-hSlide1">
+      <video src="video/meluncur atas.mp4" autoplay loop muted disablePictureInPicture></video>
+    </div>
+  </div>
+
+  <button class="nav-button" id="up-button" onclick="scrollSlide('up')">Up</button>
+  <button class="nav-button" id="down-button" onclick="scrollSlide('down')">Down</button>
+  <button class="nav-button" id="left-button" onclick="scrollSlide('left')">Left</button>
+  <button class="nav-button" id="right-button" onclick="scrollSlide('right')">Right</button>
+
+  <div class="speed-control">
+    <button onclick="changeSpeed(-2)">Speed -2</button>
+    <button onclick="resetSpeed()">Speed Normal</button>
+    <button onclick="changeSpeed(2)">Speed +2</button>
+  </div>
+
+
+<table class="centered-table"  width="600" border="0"  >
+  <tbody>
+    <tr>
+      <td > <p> Audio</p>
+		<audio id="audio1" src="./audio/Meluncur.mp3" preload="auto" loop></audio>
+		<div class="audio-controls">
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <span id="currentTime">00:00</span>
+        <div class="progress-bar">
+            <input type="range" id="progressBar" value="0" max="100">
+        </div>
+        <span id="duration">0:58</span>
+    </div>
+
+    <!-- Control Buttons -->
+    <button id="playPauseButton" onclick="playPauseAudio()">Play</button>
+    <button onclick="rewindAudio()">Rewind 5s</button>
+    <button onclick="forwardAudio()">Forward 5s</button>
+
+    <!-- Seek and Speed Controls -->
+    </div></td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+    const audio = document.getElementById("audio1");
+    const progressBar = document.getElementById("progressBar");
+    const currentTimeDisplay = document.getElementById("currentTime");
+    const durationDisplay = document.getElementById("duration");
+    const playPauseButton = document.getElementById("playPauseButton");
+
+
+    // Format time in MM:SS format
+    function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const secondsLeft = Math.floor(seconds % 60);
+        return `${minutes}:${secondsLeft.toString().padStart(2, "0")}`;
+    }
+
+    // Play/Pause audio
+    function playPauseAudio() {
+        if (audio.paused) {
+            audio.play();
+            playPauseButton.textContent = "Pause"; 
+        } else {
+            audio.pause();
+            playPauseButton.textContent = "Play";
+            
+        }
+    }
+
+    // Rewind the audio by 5 seconds
+    function rewindAudio() {
+        audio.currentTime = Math.max(0, audio.currentTime - 5);
+    }
+
+    // Forward the audio by 5 seconds
+    function forwardAudio() {
+        audio.currentTime = Math.min(audio.duration, audio.currentTime + 5);
+    }
+
+    // Change the playback speed
+    function changeSpeed() {
+        const speed = parseFloat(document.getElementById("speedControl").value);
+        audio.playbackRate = speed;
+    }
+
+    // Update the progress bar as the audio plays
+    audio.ontimeupdate = () => {
+        const progressPercent = (audio.currentTime / audio.duration) * 100;
+        progressBar.value = progressPercent;
+        currentTimeDisplay.textContent = formatTime(audio.currentTime);
+    };
+
+    // Update the duration display when metadata is loaded
+    audio.onloadedmetadata = () => {
+        durationDisplay.textContent = formatTime(audio.duration);
+        progressBar.max = 100;
+    };
+
+    // Seek audio when the progress bar is clicked or dragged
+    progressBar.oninput = () => {
+        const seekTime = (progressBar.value / 100) * audio.duration;
+        audio.currentTime = seekTime;
+    };
+</script>
+
+<div class="long-text">
+<table width="1200" border="0">
+  <tbody>
+    <tr>
+      <td><h2>a.Posisi Badan</h2></td>
+    </tr>
+    <tr>
+      <td><p> &nbsp; &nbsp; &nbsp;-Tubuh harus lurus dan sejajar dengan permukaan air dalam posisi streamline.</p></td>
+    </tr>
+    <tr>
+      <td><p> &nbsp; &nbsp; &nbsp;-Lengan lurus di depan kepala, dengan telapak tangan menyatu dan jari-jari mengarah ke depan.</p></td>
+    </tr>
+    <tr>
+      <td><p> &nbsp; &nbsp; &nbsp;-Kaki rapat dan lurus, dengan jari-jari kaki mengarah ke belakang.</p></td>
+    </tr>
+    <tr>
+      <td><h2>b.Dorongan dari Dinding</h2></td>
+    </tr>
+    <tr>
+      <td><p> &nbsp; &nbsp; &nbsp; -Setelah melakukan start atau flip turn, dorong tubuh dari dinding dengan kuat menggunakan kaki.</p></td>
+    </tr>
+    <tr>
+      <td><p>&nbsp; &nbsp; &nbsp; -Pastikan tubuh tetap dalam posisi streamline untuk mengurangi hambatan air.</p></td>
+    </tr>
+     <tr>
+      <td><h2>c.Gerakan Kaki</h2></td>
+    </tr>
+    <tr>
+      <td><p> &nbsp; &nbsp; &nbsp;-Setelah dorongan awal, lanjutkan dengan tendangan lumba-lumba (dolphin kick) atau flutter kick yang kuat untuk mempertahankan kecepatan.</p></td>
+    </tr>
+     <tr>
+      <td><p>&nbsp; &nbsp; &nbsp; -Mulailah gerakan tangan setelah meluncur untuk masuk ke gaya renang yang diinginkan.</p></td>
+    </tr>
+         <tr>
+      <td><h2>d.Pernapasan</h2>
+</td>
+    </tr>
+    <tr>
+      <td><p> &nbsp; &nbsp; &nbsp;-Ambil napas dalam-dalam sebelum meluncur, dan keluarkan secara perlahan selama berada di bawah air.</p></td>
+    </tr>
+    <tr>
+      <td><p> &nbsp; &nbsp; &nbsp;-Ambil napas lagi setelah tubuh kembali ke permukaan air dan masuk ke gaya renang.</p></td>
+    </tr>
+      </tbody>
+</table>
+</div>
+<br>
+
+
+<footer class="footer">
+  	 <div class="contain">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>company</h4>
+				<table width="1200" border="0">
+				<tbody>
+   					<tr>
+  					    <td><a href="about.html">about us</a></td>
+    					</tr>
+           				<tr>
+      						<td><a href="privacy policy.html">privacy policy</a></td>
+    					</tr>
+      					 </tbody>
+					</table>   
+
+  	 		</div>
+    	 		<div class="footer-col">
+  	 			<h4>follow us</h4>
+  	 			<div class="social-links">
+  	 				<a href="https://www.facebook.com/andreas.anandeto?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="https://instagram.com/savarez_mupu?igshid=YTQwZjQ0NmI0OA=="><i class="fab fa-instagram"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  </footer>
+  <Script src="js/main1.js"></script>
+    <Script src="js/main3.js"></script>
+      <Script src="js/script.js"></script>
+      <Script src="js/main4.js"></script>
+      <Script src="js/main5.js"></script>
+      <script src="js/anime.js"></script>
+      <script src="js/navigation.js"></script>
+</body>
+</html>
+

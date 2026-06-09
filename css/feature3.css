@@ -1,0 +1,200 @@
+.main-content-4 {
+  background-color: #024a75;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.feature-video-container {
+  position: relative;
+  padding: 2rem 0;
+  overflow: hidden;
+}
+
+.features-3 {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 2rem;
+  scrollbar-width: none;
+}
+
+.features-3::-webkit-scrollbar {
+  display: none;
+}
+
+.feature-3 {
+  flex: 0 0 auto;
+  width: 22%;
+  background-color: #b3e0f2;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s;
+  box-sizing: border-box;
+}
+
+.feature-3:hover {
+  transform: translateY(-10px);
+}
+
+.feature-3 img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.feature-3 h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #06223a;
+}
+
+.feature-3 p {
+  font-size: 1rem;
+  color: #000;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.feature-3 a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #00aaff;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.feature-3 a:hover {
+  background-color: #008ecc;
+}
+
+.video-slider {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 40px;
+  scrollbar-width: none;
+}
+
+.video-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.video-card {
+  flex: 0 0 auto;
+  width: 300px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: left;
+  transition: transform 0.2s ease-in-out;
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 170px;
+  border-radius: 8px;
+  border: none;
+}
+
+.video-card h3 {
+  font-size: 16px;
+  margin: 10px 0 5px;
+  color: #333;
+  text-align: center;
+}
+
+/* Scroll Button */
+.scroll-btn,
+.scroll-btn-feature,
+.scroll-btn-video {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.scroll-btn:hover,
+.scroll-btn-feature:hover,
+.scroll-btn-video:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.scroll-btn.left,
+.scroll-btn-feature.left,
+.scroll-btn-video.left {
+  left: 10px;
+}
+
+.scroll-btn.right,
+.scroll-btn-feature.right,
+.scroll-btn-video.right {
+  right: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .feature-3 {
+    width: 60%;
+  }
+
+  .video-card {
+    width: 250px;
+  }
+
+  .video-card iframe {
+    height: 150px;
+  }
+
+  .scroll-btn,
+  .scroll-btn-feature,
+  .scroll-btn-video {
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  .main-content-4 h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-3 {
+    width: 80%;
+  }
+
+  .video-card {
+    width: 220px;
+  }
+
+  .video-card iframe {
+    height: 130px;
+  }
+
+  .main-content-4 h1 {
+    font-size: 1.7rem;
+  }
+}

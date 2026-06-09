@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #00008b;
+}
+
+h1 {
+  margin: 100px 5px 5px;
+  font-size: 40px;
+  color: #333;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  background-color: #00008b;
+  padding: 1rem 0;
+}
+
+.banner {
+  text-align: center;
+}
+
+.intro {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #00008b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 10s ease, top 10s ease;
+}
+
+.intro.slide-up {
+  top: -100vh;
+}
+
+.logos-img {
+  display: block;
+  margin: 0 auto;
+  max-width: 200px;
+  height: auto;
+  border-radius: 0;
+}
+
+.logos-header {
+  position: relative;
+  color: #ffffff;
+  font-size: 60px;
+  font-weight: 600;
+}
+
+.logos {
+  position: relative;
+  display: inline-block;
+  bottom: -20px;
+  opacity: 0;
+}
+
+.logos.active {
+  bottom: 0;
+  opacity: 1;
+  transition: ease-in-out 0.5s;
+}
+
+.logos.fade {
+  bottom: 150px;
+  opacity: 0;
+  transition: ease-in-out 0.5s;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+h3 {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ✅ Responsive untuk layar kecil */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    margin: 60px 10px 5px;
+  }
+
+  .logos-header {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .logos-img {
+    max-width: 120px;
+  }
+
+  .intro {
+    padding: 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+}

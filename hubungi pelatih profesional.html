@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renang</title>
+	<link rel="stylesheet" href="css/cotener.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Anime.css">
+    <link rel="stylesheet" href="css/header.css">
+   <link rel="stylesheet" href="css/navigation.css">
+   <link rel="stylesheet" href="css/feature.css">
+   <link rel="stylesheet" href="css/feature2.css">
+   <link rel="stylesheet" href="css/feature3.css">
+   <link rel="stylesheet" href="css/maincontent1.css">
+   <link rel="stylesheet" href="css/footer.css">
+   <link rel="stylesheet" href="css/styless.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<style>body {
+		font-family: Arial, sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: #b3e0f2; /* White background for the page */
+		color: #333;
+	  }
+	  
+	  
+	  /* Section Layout */
+	  .about-section {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px;
+		min-height: 100vh;
+		opacity: 0;
+		transform: translateY(50px);
+		transition: all 0.8s ease-in-out;
+		margin: 0;
+		position: relative;
+		overflow: hidden;
+		border-radius: 0;
+		background-color: #125ba4;
+	  }
+	  
+	  /* Alternate Background Colors */
+	  .about-section:nth-child(odd) {
+		background-color: #125ba4; /* Light blue background for odd sections */
+	  }
+	  
+	  .about-section:nth-child(even) {
+		background-color: #125ba4; /* White background for even sections */
+	  }
+	  
+	  /* Animation for Fade-In Effect */
+	  @keyframes fadeInUp {
+		0% {
+		  opacity: 0;
+		  transform: translateY(50px);
+		}
+		100% {
+		  opacity: 1;
+		  transform: translateY(0);
+		}
+	  }
+	  
+	  /* When section is visible */
+	  .about-section.show {
+		opacity: 1;
+		transform: translateY(0);
+		animation: fadeInUp 1s ease-in-out forwards;
+	  }
+	  
+	  /* Text Container */
+	  .text-container {
+		width: 50%;
+		padding-right: 20px;
+		z-index: 1;
+		opacity: 0;
+		transform: translateX(-50px);
+		transition: all 0.8s ease-in-out;
+		color: #90bcec;
+		background-color: #125ba4; 
+	  }
+	  
+	  .text-container.show {
+		opacity: 1;
+		transform: translateX(0);
+	  }
+	  
+	  .text-container h1 {
+		font-size: 36px;
+		margin-bottom: 20px;
+		color: #b3e0f2;
+		background-color: #125ba4; 
+	  }
+	  
+	  .text-container p {
+		font-size: 18px;
+		line-height: 1.6;
+		text-align: justify;
+		color:#000000;
+	  }
+	  
+	  /* Photo Container */
+	  .photo-container {
+		width: 45%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		z-index: 1;
+		opacity: 0;
+		transform: translateY(50px);
+		transition: all 0.8s ease-in-out;
+	  }
+	  
+	  .photo-container.show {
+		opacity: 1;
+		transform: translateY(0);
+	  }
+	  
+	  .photo {
+		border-radius: 0;
+		box-shadow: none;
+		background-color: transparent;
+		display: block;
+	  }
+	  
+	  /* Responsive Design */
+	  @media (max-width: 768px) {
+		.about-section {
+		  flex-direction: column;
+		  text-align: center;
+		}
+	  
+		.text-container,
+		.photo-container {
+		  width: 100%;
+		}
+	  
+		.text-container {
+		  padding-right: 0;
+		}
+	  }
+	  
+	  /* Section Layout */
+	  .about-section1 {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px;
+		min-height: 100vh;
+		background-color: #b3e0f2; /* Light blue background */
+	  }
+	  
+	  /* Text Container */
+	  .text-container1 {
+		width: 50%;
+		padding-right: 20px;
+		animation: fadeInLeft 1s ease-in-out forwards;
+	  }
+	  
+	  .text-container1 h1 {
+		font-size: 36px;
+		margin-bottom: 20px;
+		color: #125ba4;
+		background-color:#b3e0f2 ; 
+	  }
+	  
+	  .text-container1 p {
+		font-size: 18px;
+		line-height: 1.6;
+		text-align: justify;
+	  }
+	  
+	  /* Photo Container */
+	  .photo-container1 {
+		width: 45%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		animation: fadeInRight 1s ease-in-out forwards;
+	  }
+	  
+	  .photo1 {
+		width: 100%;
+		height: 100%;
+	  }
+	  
+	  /* Animations */
+	  @keyframes fadeInLeft {
+		0% {
+		  opacity: 0;
+		  transform: translateX(-50px);
+		}
+		100% {
+		  opacity: 1;
+		  transform: translateX(0);
+		}
+	  }
+	  
+	  @keyframes fadeInRight {
+		0% {
+		  opacity: 0;
+		  transform: translateX(50px);
+		}
+		100% {
+		  opacity: 1;
+		  transform: translateX(0);
+		}
+	  }
+	  
+	  /* Responsive Design */
+	  @media (max-width: 768px) {
+		.about-section1 {
+		  flex-direction: column;
+		  text-align: center;
+		}
+	  
+		.text-container1,
+		.photo-container1 {
+		  width: 100%;
+		  animation: fadeInUp 1s ease-in-out forwards;
+		}
+	  
+		.text-container1 {
+		  padding-right: 0;
+		}
+	  }
+	  
+	  
+	  .about-section2 {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px;
+			min-height: 100vh;
+			background-color: #90bcec; /* Light blue background */
+		  }
+	  
+		  .text-container2 {
+			width: 50%;
+			padding-right: 20px;
+			opacity: 0;
+			transform: translateX(-50px);
+			transition: all 1s ease-in-out;
+		  }
+	  
+		  .text-container2.show2 {
+			opacity: 1;
+			transform: translateX(0);
+		  }
+	  
+		  .text-container2 h1 {
+			font-size: 36px;
+			margin-bottom: 20px;
+			color: #125ba4;
+			background-color: #90bcec;
+		  }
+	  
+		  .text-container2 p {
+			font-size: 18px;
+			line-height: 1.6;
+			text-align: justify;
+			color: #000000;
+		  }
+	  
+		  .photo-container2 {
+			width: 45%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			opacity: 0;
+			transform: translateX(50px);
+			transition: all 1s ease-in-out;
+		  }
+	  
+		  .photo-container2.show2 {
+			opacity: 1;
+			transform: translateX(0);
+		  }
+	  
+		  .photo2 {
+			width: auto;
+			height: auto;
+		  }
+	  
+		  /* Responsive Design */
+		  @media (max-width: 768px) {
+			.about-section2 {
+			  flex-direction: column;
+			  text-align: center;
+			}
+	  
+			.text-container2,
+			.photo-container2 {
+			  width: 100%;
+			  padding-right: 0;
+			  transform: translateY(50px);
+			}
+	  
+			.text-container2.show2,
+			.photo-container2.show2 {
+			  transform: translateY(0);
+			}
+		  }
+	  
+	  @keyframes fadeInRight {
+		0% {
+		  opacity: 0;
+		  transform: translateX(50px);
+		}
+		100% {
+		  opacity: 1;
+		  transform: translateX(0);
+		}
+	  }
+	  
+	  /* Responsive Design */
+	  @media (max-width: 768px) {
+		.about-section2 {
+		  flex-direction: column;
+		  text-align: center;
+		}
+	  
+		.text-container2,
+		.photo-container2 {
+		  width: 100%;
+		  animation: fadeInUp 1s ease-in-out forwards;
+		}
+	  
+		.text-container2 {
+		  padding-right: 0;
+		}
+	  }
+	  
+	  /* Animation for Mobile View */
+	  @keyframes fadeInUp {
+		0% {
+		  opacity: 0;
+		  transform: translateY(50px);
+		}
+		100% {
+		  opacity: 1;
+		  transform: translateY(0);
+		}
+	  }
+	  @media (max-width: 768px) {
+  /* Untuk .about-section (termasuk Khresmupu & Renang) */
+  .about-section {
+    flex-direction: column;
+  }
+
+  .photo-container {
+    order: -1; /* Gambar muncul di atas teks */
+    margin-bottom: 1rem;
+  }
+
+  .text-container {
+    order: 0;
+  }
+
+  /* Untuk .about-section1 (Tirta Sapa) */
+  .about-section1 {
+    flex-direction: column;
+  }
+
+  .photo-container1 {
+    order: -1;
+    margin-bottom: 1rem;
+  }
+
+  .text-container1 {
+    order: 0;
+  }
+
+  /* Untuk .about-section2 (Andreas) */
+  .about-section2 {
+    flex-direction: column;
+  }
+
+  .photo-container2 {
+    order: -1;
+    margin-bottom: 1rem;
+  }
+
+  .text-container2 {
+    order: 0;
+  }
+}
+
+	  </style>
+</head>
+<body>
+<button onclick="topFunction()" id="myBtn" title="Go to top">V</button>
+ <!-- Overlay awal -->
+ <div id="overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <!-- Logo -->
+    <label class="logo" onclick="window.location.href='home.html';">
+      <img src="image/logo.png" alt="Logo" class="logo-img">TIRTA SAPA
+    </label>
+
+<div class="center-buttons">
+  <!-- Dropdown Swimming Style -->
+  <div class="dropdown">
+    <a  class="dropdown-btn" onclick="toggleDropdown('styleDropdown')">Gaya Renang</a>
+    <div id="styleDropdown" class="dropdown-content">
+      <a href="Gaya Bebas.html">Gaya Bebas</a>
+      <a href="Gaya Dada.html">Gaya Dada</a>
+      <a href="Gaya Punggung.html">Gaya Punggung</a>
+      <a href="Gaya Kupu-kupu.html">Gaya Kupu-Kupu</a>
+    </div>
+  </div>
+
+  <!-- Dropdown Swimming Techniques -->
+  <div class="dropdown">
+    <a  class="dropdown-btn" onclick="toggleDropdown('techniqueDropdown')">Teknik Renang</a>
+    <div id="techniqueDropdown" class="dropdown-content">
+      <a href="Menyelam.html">Menyelam</a>
+      <a href="Menggambang.html">Mengambang</a>
+      <a href="Pembalikkan Salto.html">Salto</a>
+      <a href="Meluncur.html">Meluncur</a>
+	  <a href="Melompat.html">Melompat</a>
+    </div>
+  </div>
+
+  <!-- Other Buttons -->
+  <a href="Panduan Keselamatan.html" class="center-btn">Panduan Keselamatan</a>
+  <a href="Peralatan renang.html" class="center-btn">Peralatan Renang</a>
+</div> 
+
+
+  <!-- Navigation Links -->
+  <a href="about.html">About Us</a>
+  <a href="hubungi pelatih profesional.html">Contact a Professional</a>
+ </nav>
+
+ <br><br><br><br><br>
+<section class="about-section1">
+	
+    <div class="text-container1">
+      <h1>Khresna Mulia Putra</h1>
+      <p>
+       Email:		Khresna.mputra@gmail.com
+      </p>
+	  <p>
+		No:			08112224984
+	  </p>
+	  <p>
+		Instagram:	Savarez_Mupu
+	  </p>
+	  <p>
+		Youtube:	Khresmupu
+	  </p>
+    </div>
+    <div class="photo-container1" id="photo1">
+      <img src="image/Khresna.png" alt="Photo1" class="photo1" width="100%" height="auto">
+    </div>
+	</div>
+  </section>
+ 
+</main>
+<footer class="footer">
+  	 <div class="contain">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>company</h4>
+				<table width="1200" border="0">
+				<tbody>
+   					 <tr>
+  					    <td><a href="about.html">about us</a></td>
+    					</tr>
+           				<tr>
+      						<td><a href="privacy policy.html">privacy policy</a></td>
+    					</tr>
+         				</tbody>
+					</table>   
+
+  	 		</div>
+    	 		<div class="footer-col">
+  	 			<h4>follow us</h4>
+  	 			<div class="social-links">
+  	 				<a href="https://www.facebook.com/andreas.anandeto?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="https://instagram.com/savarez_mupu?igshid=YTQwZjQ0NmI0OA=="><i class="fab fa-instagram"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  </footer>
+  <Script src="js/main1.js"></script>
+    <Script src="js/main2.js"></script>
+    <Script src="js/anim.js"></script>
+    <Script src="js/script.js"></script>
+    <Script src="js/script_with_console_logged.js"></script>
+    <Script src="js/main4.js"></script>
+    <Script src="js/main5.js"></script>
+    <script src="js/anime.js"></script>
+    <script src="js/navigation.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renang</title>
+    <link rel="stylesheet" href="css/cotener.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Anime.css">
+    <link rel="stylesheet" href="css/header.css">
+   <link rel="stylesheet" href="css/navigation.css">
+   <link rel="stylesheet" href="css/feature.css">
+   <link rel="stylesheet" href="css/feature2.css">
+   <link rel="stylesheet" href="css/feature3.css">
+   <link rel="stylesheet" href="css/maincontent1.css">
+   <link rel="stylesheet" href="css/footer.css">
+   <link rel="stylesheet" href="css/styless.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+
+    .about-section,
+    .about-section1,
+    .about-section2 {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      background-color: #125ba4;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .text-container,
+    .text-container1,
+    .text-container2 {
+      flex: 1;
+      min-width: 300px;
+      padding: 10px;
+    }
+
+    .text-container h1,
+    .text-container1 h1,
+    .text-container2 h1 {
+      font-size: 28px;
+      color: #b3e0f2;
+      
+      background-color: #125ba4;
+    }
+
+    .text-container p,
+    .text-container1 p,
+    .text-container2 p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #ffffff;
+    }
+
+    .photo-container,
+    .photo-container1,
+    .photo-container2 {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .photo img,
+    .photo1,
+    .photo2,
+    iframe {
+      width: 100%;
+      max-width: 400px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+
+    .social-links a {
+      margin: 0 10px;
+      color: #fff;
+      font-size: 18px;
+    }
+    .about-section:hover,
+.about-section1:hover,
+.about-section2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .about-section,
+  .about-section1,
+  .about-section2 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .photo-container,
+  .photo-container1,
+  .photo-container2 {
+    order: -1; /* Pindahkan gambar ke atas */
+    margin-bottom: 20px;
+  }
+
+  .text-container,
+  .text-container1,
+  .text-container2 {
+    padding: 10px;
+  }
+
+  .photo img,
+  .photo1,
+  .photo2,
+  iframe {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+  }
+
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 14px;
+    text-align: center;
+    margin: 40px auto 0;
+    max-width: 200px; /* PAKSA teks agar cukup 2 kata per baris */
+    line-height: 1.3;
+  }
+  h3 {
+    font-size: 7px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  
+<button onclick="topFunction()" id="myBtn" title="Go to top">V</button>
+<!-- Overlay awal -->
+<div id="overlay"></div>
+ <nav class="nav">
+    <label class="logo" onclick="window.location.href='home.html';">
+      <img src="image/logo.png" alt="Logo" class="logo-img">TIRTA SAPA
+    </label>
+
+    <div class="center-buttons">
+      <div class="dropdown">
+        <a class="dropdown-btn" onclick="toggleDropdown('styleDropdown')">Gaya Renang</a>
+        <div id="styleDropdown" class="dropdown-content">
+          <a href="Gaya Bebas.html">Gaya Bebas</a>
+          <a href="Gaya Dada.html">Gaya Dada</a>
+          <a href="Gaya Punggung.html">Gaya Punggung</a>
+          <a href="Gaya Kupu-kupu.html">Gaya Kupu-Kupu</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a class="dropdown-btn" onclick="toggleDropdown('techniqueDropdown')">Teknik Renang</a>
+        <div id="techniqueDropdown" class="dropdown-content">
+          <a href="Menyelam.html">Menyelam</a>
+          <a href="Menggambang.html">Mengambang</a>
+          <a href="Pembalikkan Salto.html">Salto</a>
+          <a href="Meluncur.html">Meluncur</a>
+          <a href="Melompat.html">Melompat</a>
+        </div>
+      </div>
+
+      <a href="Panduan Keselamatan.html" class="center-btn">Panduan Keselamatan</a>
+      <a href="Peralatan renang.html" class="center-btn">Peralatan Renang</a>
+    </div>
+
+    <a href="about.html">About Us</a>
+    <a href="hubungi pelatih profesional.html">Contact a Professional</a>
+  </nav>
+
+ <br><br><br><br><br>
+  <h1>Peralatan Renang</h1>
+  <h3>(Swimming Equipment)</h3>
+<section class="about-section1">
+  <div class="text-container1">
+    <h1>Pakaian Renang</h1>
+    <p>
+      Pakaian renang merupakan perlengkapan utama yang dirancang khusus untuk memberikan kenyamanan dan fleksibilitas saat berada di dalam air.
+      Jenisnya bermacam-macam, seperti one-piece, two-piece, dan swim trunks, yang masing-masing memiliki keunggulan tersendiri tergantung pada kebutuhan dan preferensi perenang.
+      Bahan yang digunakan umumnya elastis dan cepat kering untuk meminimalisir hambatan di air serta meningkatkan performa berenang.
+    </p>
+    <p>
+      Bagi perenang muslimah, tersedia pakaian renang syar'i yang menutupi tubuh sesuai dengan prinsip syariah, namun tetap terbuat dari bahan yang ringan dan tidak mengganggu gerakan.
+      Selain itu, baju selam seperti wetsuit dan drysuit biasa digunakan untuk berenang di perairan dingin atau dalam jangka waktu lama karena mampu menjaga suhu tubuh.
+    </p>
+  </div>
+  <div class="photo-container1">
+    <img src="image/baju.webp" alt="Baju Renang" class="photo1">
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="photo-container">
+    <img src="image/kacamata.jpg" alt="Kacamata Renang" class="photo1">
+  </div>
+  <div class="text-container">
+    <h1>Kacamata Renang</h1>
+    <p>
+      Kacamata renang berfungsi melindungi mata dari iritasi yang disebabkan oleh air kolam yang mengandung kaporit atau air laut yang asin.
+      Alat ini sangat penting untuk menjaga pandangan tetap jelas dan menghindari mata merah atau perih setelah berenang.
+    </p>
+    <p>
+      Kacamata renang yang baik harus memiliki karet penyegel yang rapat dan nyaman di wajah agar tidak bocor, serta tali pengikat yang bisa disesuaikan.
+      Lensa anti-kabut dan pelindung UV juga menjadi fitur penting bagi mereka yang berenang di luar ruangan.
+    </p>
+  </div>
+</section>
+
+<section class="about-section2">
+  <div class="text-container2">
+    <h1>Topi Renang</h1>
+    <p>
+      Topi renang digunakan untuk menjaga rambut tetap rapi dan kering selama berenang serta membantu mengurangi hambatan air.
+      Dengan menggunakan topi renang, rambut tidak menyebar ke mana-mana sehingga tidak mengganggu pandangan atau perenang lain.
+    </p>
+    <p>
+      Selain itu, topi renang membantu mencegah klorin merusak rambut, terutama bagi yang berenang secara rutin.
+      Topi ini tersedia dalam berbagai bahan seperti silikon, lateks, dan kain, masing-masing dengan kelebihan dan kenyamanan yang berbeda.
+    </p>
+  </div>
+  <div class="photo-container2">
+    <img src="image/topi.png" alt="Topi Renang" class="photo2">
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="photo-container">
+    <img src="image/pelampung.png" alt="Pelampung" class="photo1">
+  </div>
+  <div class="text-container">
+    <h1>Pelampung</h1>
+    <p>
+      Pelampung merupakan alat bantu penting untuk pemula yang baru belajar berenang atau untuk latihan teknik tertentu.
+      Tersedia berbagai jenis pelampung seperti pelampung lengan, kickboard, dan pull buoy.
+    </p>
+    <p>
+      Pelampung lengan membantu anak-anak atau pemula agar tetap mengapung di permukaan air.
+      Kickboard digunakan untuk fokus latihan pada kaki, sedangkan pull buoy membantu melatih kekuatan lengan dengan menahan kaki agar tidak bergerak saat berenang.
+    </p>
+  </div>
+</section>
+
+<section class="about-section1">
+  <div class="text-container1">
+    <h1>Penyumbat Telinga & Hidung</h1>
+    <p>
+      Penyumbat telinga dan hidung sangat berguna untuk menghindari masuknya air ke dalam saluran telinga dan hidung saat berenang.
+      Ini penting terutama bagi orang yang memiliki masalah sinus atau sering mengalami infeksi telinga.
+    </p>
+    <p>
+      Ear plugs (penyumbat telinga) biasanya terbuat dari silikon yang lentur dan pas di liang telinga, sedangkan nose clip (penjepit hidung) menjaga agar air tidak masuk ke hidung terutama saat melakukan gaya punggung atau kupu-kupu.
+    </p>
+  </div>
+  <div class="photo-container1">
+    <img src="image/penyumbat.png" alt="Penyumbat" class="photo1">
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="photo-container">
+    <img src="image/kaki.png" alt="Fins" class="photo1">
+  </div>
+  <div class="text-container">
+    <h1>Kaki Katak</h1>
+    <p>
+      Kaki katak atau fins adalah alat bantu latihan yang dipasang di kaki untuk meningkatkan kekuatan otot dan kecepatan saat berenang.
+      Alat ini membantu perenang melatih teknik tendangan kaki dan efisiensi gerakan di dalam air.
+    </p>
+    <p>
+      Fins tersedia dalam berbagai bentuk dan panjang, dari yang pendek untuk latihan sprint hingga yang panjang untuk latihan daya tahan.
+      Menggunakannya secara rutin dalam latihan akan memperbaiki posisi tubuh dan meningkatkan kapasitas paru-paru.
+    </p>
+  </div>
+</section>
+
+<section class="about-section2">
+  <div class="text-container2">
+    <h1>Handuk</h1>
+    <p>
+      Handuk adalah perlengkapan penting untuk mengeringkan tubuh setelah berenang.
+      Handuk berbahan microfiber sangat dianjurkan karena memiliki daya serap tinggi dan cepat kering, serta ringan untuk dibawa.
+    </p>
+    <p>
+      Handuk yang baik juga harus cukup besar untuk membungkus tubuh dengan nyaman.
+      Perawatan handuk yang baik akan memastikan kebersihannya tetap terjaga dan tidak menjadi sarang bakteri.
+    </p>
+  </div>
+  <div class="photo-container2">
+    <img src="image/handuk.png" alt="Handuk" class="photo2">
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="photo-container">
+    <img src="image/sepatu.png" alt="Sepatu Air" class="photo1">
+  </div>
+  <div class="text-container">
+    <h1>Sepatu Air</h1>
+    <p>
+      Sepatu air melindungi kaki dari permukaan kasar, licin, atau benda tajam di kolam maupun pantai.
+      Alat ini juga membantu mencegah tergelincir saat berjalan di area sekitar kolam renang.
+    </p>
+    <p>
+      Sepatu ini biasanya terbuat dari bahan karet fleksibel dan ringan dengan sol anti-selip.
+      Sangat cocok digunakan untuk aktivitas renang di alam terbuka seperti sungai atau danau.
+    </p>
+  </div>
+</section>
+
+<section class="about-section1">
+  <div class="text-container1">
+    <h1>Tas Renang</h1>
+    <p>
+      Tas renang dirancang khusus untuk membawa perlengkapan renang seperti pakaian, handuk, botol air, dan alat bantu lainnya.
+      Tas ini umumnya terbuat dari bahan tahan air agar isi tas tetap kering meskipun berada di lingkungan basah.
+    </p>
+    <p>
+      Desain tas renang biasanya memiliki banyak kompartemen sehingga memudahkan dalam pengaturan barang.
+      Beberapa model dilengkapi dengan ventilasi agar pakaian basah tidak menyebabkan bau.
+    </p>
+  </div>
+  <div class="photo-container1">
+    <img src="image/tas.png" alt="Tas Renang" class="photo1">
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="photo-container">
+    <img src="image/botol.png" alt="Botol Air" class="photo1">
+  </div>
+  <div class="text-container">
+    <h1>Botol Air</h1>
+    <p>
+      Botol air penting untuk menjaga tubuh tetap terhidrasi selama dan setelah aktivitas renang.
+      Dehidrasi dapat terjadi meskipun tubuh berada di air, karena tubuh tetap kehilangan cairan melalui keringat.
+    </p>
+    <p>
+      Botol minum sebaiknya terbuat dari bahan bebas BPA dan memiliki tutup rapat agar tidak mudah tumpah di dalam tas.
+      Menjaga asupan cairan juga penting untuk mempercepat pemulihan otot setelah latihan renang.
+    </p>
+  </div>
+</section>
+
+<section class="about-section2">
+  <div class="text-container2">
+    <h1>Tangan Katak</h1>
+    <p>
+      Tangan katak atau hand paddles merupakan alat bantu latihan yang digunakan untuk memperkuat otot lengan dan meningkatkan teknik pukulan tangan saat berenang.
+      Dengan menambah resistensi air, tangan katak membantu memperbesar daya dorong sekaligus memperbaiki efisiensi gerakan tangan.
+    </p>
+    <p>
+      Alat ini sangat efektif digunakan dalam latihan gaya bebas dan kupu-kupu.
+      Namun penggunaannya harus hati-hati karena beban tambahan bisa menyebabkan stres pada bahu jika teknik belum sempurna.
+      Disarankan untuk digunakan dalam durasi terbatas dan dengan pengawasan pelatih jika diperlukan.
+    </p>
+  </div>
+  <div class="photo-container2">
+    <img src="image/tangan-katak.png" alt="Tangan Katak" class="photo2">
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="photo-container">
+    <img src="image/jam.png" alt="Jam Renang" class="photo1">
+  </div>
+  <div class="text-container">
+    <h1>Jam Tangan Renang</h1>
+    <p>
+      Jam tangan renang berguna untuk mencatat waktu, mengukur jarak, hingga melacak detak jantung saat latihan atau berenang rutin.
+      Alat ini banyak digunakan oleh atlet renang untuk meningkatkan efisiensi latihan dan evaluasi performa.
+    </p>
+    <p>
+      Banyak model modern yang dilengkapi fitur tahan air, GPS, hingga analisis gaya berenang.
+      Dengan teknologi ini, perenang dapat memantau kemajuan secara akurat dan mengatur target latihan dengan lebih efektif.
+    </p>
+  </div>
+</section>
+
+<section class="about-section1">
+  <div class="text-container1">
+    <h1>Kotak P3K</h1>
+    <p>
+      Kotak P3K (Pertolongan Pertama Pada Kecelakaan) wajib dibawa terutama saat berenang di alam terbuka atau saat mengikuti latihan kelompok.
+      Isinya meliputi plester, antiseptik, perban, obat luka ringan, dan perlengkapan dasar lainnya.
+    </p>
+    <p>
+      Kotak ini sangat berguna untuk menangani luka kecil seperti goresan, lecet, atau cedera ringan sebelum mendapatkan bantuan medis lebih lanjut.
+      Pastikan isinya lengkap, bersih, dan tidak melewati tanggal kedaluwarsa.
+    </p>
+  </div>
+  <div class="photo-container1">
+    <img src="image/aid.png" alt="First Aid Kit" class="photo1">
+  </div>
+</section>
+
+<section class="about-section2">
+  <div class="text-container2">
+    <h1>Snorkel</h1>
+    <p>
+      Snorkel merupakan alat bantu pernapasan yang memungkinkan perenang bernapas melalui mulut saat wajah berada di dalam air.
+      Alat ini sangat berguna dalam latihan teknik karena memungkinkan perenang fokus pada gerakan tanpa harus sering mengangkat kepala.
+    </p>
+    <p>
+      Snorkel renang biasanya memiliki desain lurus dan dipasang di bagian tengah wajah (center-mount), berbeda dari snorkel menyelam.
+      Beberapa model juga dilengkapi dengan katup satu arah atau pelindung cipratan air untuk kenyamanan tambahan.
+    </p>
+  </div>
+  <div class="photo-container2">
+    <img src="image/snorkel.png" alt="Snorkel" class="photo2">
+  </div>
+</section>
+
+ </main>
+<br>
+<footer class="footer">
+  	 <div class="contain">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>company</h4>
+				<table width="1200" border="0">
+				<tbody>
+   					 <tr>
+  					    <td><a href="about.html">about us</a></td>
+    					</tr>
+           				<tr>
+      						<td><a href="privacy policy.html">privacy policy</a></td>
+    					</tr>
+      					 </tbody>
+					</table>   
+
+  	 		</div>
+    	 		<div class="footer-col">
+  	 			<h4>follow us</h4>
+  	 			<div class="social-links">
+  	 				<a href="https://www.facebook.com/andreas.anandeto?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="https://instagram.com/savarez_mupu?igshid=YTQwZjQ0NmI0OA=="><i class="fab fa-instagram"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  </footer>
+  <Script src="js/main1.js"></script>
+    <Script src="js/main3.js"></script>
+  <Script src="js/anim.js"></script>
+  <Script src="js/script.js"></script>
+  <Script src="js/script_with_console_logged.js"></script>
+  <Script src="js/main4.js"></script>
+  <Script src="js/main5.js"></script>
+  <script src="js/anime.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/position.js"></script>
+</body>
+</html>
+

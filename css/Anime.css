@@ -1,0 +1,39 @@
+/* ------------------ */
+/* Body Fade Animation */
+/* ------------------ */
+body {
+  transition: background-color 1s ease, opacity 1s ease;
+  opacity: 1; /* Tampilan normal */
+}
+
+body.animating {
+  background-color: #00008b; /* Warna saat keluar */
+  opacity: 0; /* Fade out */
+}
+
+/* ------------------ */
+/* Overlay Fullscreen */
+/* ------------------ */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #00008b;
+  z-index: 9999;
+  animation: fadeOut 2s ease forwards; /* Durasi dan efek fade */
+}
+
+/* ------------------ */
+/* Fade Out Keyframes */
+/* ------------------ */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
